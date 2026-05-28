@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  fj-bot:
+    build: .
+    restart: unless-stopped
+    environment:
+      - DISCORD_WEBHOOK_URL=${DISCORD_WEBHOOK_URL}
+      - POLL_INTERVAL=10        # secondes entre chaque check
+      - LOG_LEVEL=INFO
